@@ -49,6 +49,32 @@
 
 # File tree-structure of the Arduino Project Sketch.
 
+<pre>
+TTN_Connect_V2/
+│
+├── TTN_Connect_V2.ino
+│
+├── Accelerator.cpp
+├── Accelerator.h
+│
+├── Config.h
+│
+├── GPS.cpp
+├── GPS.h
+│
+├── PNP_Management.cpp
+├── PNP_Management.h
+│
+├── RN2483.cpp
+├── RN2483.h
+│
+├── TTN_Config.h
+│
+├── Utils.cpp 
+└── Utils.h
+</pre>
+
+
 TTN_Connect_V2/<br />
 │<br />
 ├── TTN_Connect_V2.ino<br />
