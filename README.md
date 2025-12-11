@@ -4,7 +4,7 @@ This README—including all documentation, diagrams, explanations, and descripti
 
 # Other contributions
 ## Victoria Hopeberg (s237213)
-Responsible for GUI. For more infomation see \Victoria_s237213\Farmer\Farmer\README.md
+Responsible for GUI. For more information see \Victoria_s237213\Farmer\Farmer\README.md
 
 # Livestock Monitor Prototype
 ![Fritzing Schematic of the setup](images/total-setup-fritzing.png)
