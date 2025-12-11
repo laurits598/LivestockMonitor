@@ -1,8 +1,10 @@
 
 # Authorship
-This README—including all documentation, diagrams, explanations, and descriptions of the Livestock Monitor system—was written by Laurits M. Jensen. All code, configurations, and system descriptions presented here are authored by me unless otherwise noted.
-Regarding the UI, the backend is also responsible for hosting and creating the pipeline for the UI design as part of my contribution.
-A separate folder in this repository contains the contributions of the other group members, each with their own README files documenting their respective work.
+This README—including all documentation, diagrams, explanations, and descriptions of the Livestock Monitor system—was written and performed by Laurits M. Jensen (s194279). All code, configurations, and system descriptions presented here are authored by me unless otherwise noted. Regarding the UI, the backend is also responsible for hosting and creating the pipeline for the UI design as part of my contribution. A separate folder in this repository contains the contributions of the other group members, each with their own README files documenting their respective work.
+
+# Other contributions
+## Victoria Hopeberg (s237213)
+Responsible for GUI. For more infomation see \Victoria_s237213\Farmer\Farmer\README.md
 
 # Livestock Monitor Prototype
 ![Fritzing Schematic of the setup](images/total-setup-fritzing.png)
