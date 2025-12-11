@@ -46,13 +46,15 @@
 | **LED**    | Anode (+)                  | D22 — LED control pin                  |
 |           | Cathode (–) → Resistor 1k → | GND — Current-limiting resistor needed |
 
+---
 
-# File tree-structure of the Arduino Project Sketch.
-
+# Codebase Structure of the IoT devices
+## Livestock Monitor
+### File tree-structure of the LoRaWAN_LivestockMonitor project
 <pre>
-TTN_Connect_V2/
+LoRaWAN_LivestockMonitor.ino/
 │
-├── TTN_Connect_V2.ino
+├── LoRaWAN_LivestockMonitor.ino
 │
 ├── Accelerator.cpp
 ├── Accelerator.h
@@ -74,32 +76,70 @@ TTN_Connect_V2/
 └── Utils.h
 </pre>
 
+### Brief file description
+Only seven files are active in the current prototype stage, which are; the main sketch (*.ino), RN2483 and Accelerator modules, Config library and the TTN_Config library. The Utils modules contains unused helper functions, and the remaining files haven't been implemented yet.
+### Used libraries 
+##### rn2xx3.h
+<pre> 
+Author: JP Meijers 
+Version: Varies by release 
+Docs: https://github.com/jpmeijers/RN2483-Arduino 
+</pre>
 
-TTN_Connect_V2/<br />
-│<br />
-├── TTN_Connect_V2.ino<br />
-│<br />
-├── Accelerator.cpp<br />
-├── Accelerator.h<br />
-│<br />
-├── Config.h<br />
-│<br />
-├── GPS.cpp<br />
-├── GPS.h<br />
-│<br />
-├── PNP_Management.cpp<br />
-├── PNP_Management.h<br />
-│<br />
-├── RN2483.cpp<br />
-├── RN2483.h<br />
-│<br />
-├── TTN_Config.h<br />
-│<br />
-├── Utils.cpp<br />
-└── Utils.h<br />
+##### SoftwareSerial.h
+<pre> 
+Author: Arduino 
+Version: Part of the Arduino AVR core 
+Docs: https://www.arduino.cc/reference/en/language/functions/communication/serial/softwareserial/ 
+</pre>
+
+##### Arduino.h
+<pre> 
+Author: Arduino 
+Version: Core Arduino API header 
+Docs: https://www.arduino.cc/reference/en/ 
+</pre>
+
+##### Stream.h
+<pre> 
+Author: Arduino 
+Version: Part of the Arduino core (abstract stream interface) 
+Docs: https://www.arduino.cc/reference/en/language/functions/communication/stream/ 
+</pre>
 
 
+## ESP32 base station
+### File tree-structure of the LoRaWAN_LivestockMonitor project
+<pre>
+LoRaWAN_LivestockMonitor.ino/
+│
+├── LoRaWAN_LivestockMonitor.ino
+│
+└── Secrets.h
+</pre>
+### Brief file description
+The ESP32 has an almost monotholic file structure, meaning its codebase is not subdivided into cpp/h modules. It contains one extra library file, which only purpose is to store sensitive credentials.
+### Used libraries 
+##### WiFi.h
+<pre>
+Author: Espressif Systems
+Version: Part of the ESP32 Arduino Core
+Docs: https://docs.espressif.com/projects/arduino-esp32/en/latest/api/wifi.html
+</pre>
 
+##### esp_wifi.h
+<pre>
+Author: Espressif Systems
+Version: Part of the ESP-IDF (ESP32 SDK)
+Docs: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_wifi.html
+</pre>
+
+##### PubSubClient.h
+<pre>
+Author: Nick O’Leary
+Version: 2.8
+Docs: http://pubsubclient.knolleary.net/api
+</pre>
 
 
 
