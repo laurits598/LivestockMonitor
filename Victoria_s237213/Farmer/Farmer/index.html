@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            /* General page styling */
+            margin: 0;
+            background-color: rgb(111, 89, 89);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            align-items: center;
+            color: white;
+        }
+        .container {
+            margin-top: 10%; /* Position content downward */
+        }
+        input { /* Style for input fields */
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="text"] { /* Style for text fields */
+            width: 200px;
+            margin-right: 6px;
+            margin-bottom: 12px;
+        }
+        input[type="submit"] { /* Style for submit button */
+            width: 80px;
+            background-color:rgb(56, 52, 52);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <h1>Welcome Farmer</h1>
+        <h2>Enter Your Coordinates</h2>
+        <form id="coords">
+            <!-- A longitude and latitude form on each line -->
+            <input type=text id="long1" placeholder="Longitude"><input type=text id="lat1" placeholder="Latitude"><br>
+            <input type=text id="long2" placeholder="Longitude"><input type=text id="lat2" placeholder="Latitude"><br>
+            <input type=text id="long3" placeholder="Longitude"><input type=text id="lat3" placeholder="Latitude"><br>
+            <input type=text id="long4" placeholder="Longitude"><input type=text id="lat4" placeholder="Latitude"><br>
+            <input type="submit" value="Submit"> 
+        </form>
+    </div>
+    <script>
+        /* Handles form submission */
+        document.getElementById("coords").onsubmit = function(e){
+            e.preventDefault();  /* Avoid refreshing the page */
+
+            /* JSON formatting */
+            const coords = [
+                {
+                    "longitude": parseFloat(document.getElementById("long1").value),
+                    "latitude": parseFloat(document.getElementById("lat1").value)
+                },
+                {
+                    "longitude": parseFloat(document.getElementById("long2").value),
+                    "latitude": parseFloat(document.getElementById("lat2").value)
+                },
+                {
+                    "longitude": parseFloat(document.getElementById("long3").value),
+                    "latitude": parseFloat(document.getElementById("lat3").value)
+                },
+                {
+                    "longitude": parseFloat(document.getElementById("long4").value),
+                    "latitude": parseFloat(document.getElementById("lat4").value)
+                },
+            ]
+            /* Sends a post request to /coordinates endpoint with JSON */
+            fetch("/coordinates", {
+                method: "post",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(coords)
+            });
+
+            /* Setting fields to be empty after submitting */
+            document.getElementById("long1").value = "";
+            document.getElementById("lat1").value = "";
+            document.getElementById("long2").value = "";
+            document.getElementById("lat2").value = "";
+            document.getElementById("long3").value = "";
+            document.getElementById("lat3").value = "";
+            document.getElementById("long4").value = "";
+            document.getElementById("lat4").value = "";
+        };
+    </script>   
+</body>
+</html>
+
