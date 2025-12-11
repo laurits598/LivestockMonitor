@@ -50,6 +50,7 @@ async def get_status():
         message = "Alert: The animal is outside of the farm"
 
     # status page that displays the status of the animal 
+    # check index.html for html references 
     html_content = f"""
     <!DOCTYPE html>
     <html>

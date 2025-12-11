@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Root element https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html -->
 <html>
 <head>
-    <style>
-        body {
-            /* General page styling */
+    <style> /* General page styling https://developer.mozilla.org/en-US/docs/Web/CSS/Reference*/
+        body { /*https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started*/
             margin: 0;
             background-color: rgb(111, 89, 89);
             font-family: Arial, sans-serif;
@@ -11,21 +10,22 @@
             align-items: center;
             color: white;
         }
-        .container {
+        .container { /* Class selector https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Class_selectors*/
             margin-top: 10%; /* Position content downward */
         }
-        input { /* Style for input fields */
+        input { /* Style for input fields*/
             padding: 12px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
-        }
-        input[type="text"] { /* Style for text fields */
+        } 
+        /* Attribute selector https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors*/
+        input[type="text"] { /* Style for text fields https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/text*/
             width: 200px;
             margin-right: 6px;
             margin-bottom: 12px;
         }
-        input[type="submit"] { /* Style for submit button */
+        input[type="submit"] { /* Style for submit button https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/submit*/
             width: 80px;
             background-color:rgb(56, 52, 52);
             color: white;
@@ -37,8 +37,10 @@
 <body>
     <!-- Main container -->
     <div class="container">
+        <!-- Heading elements https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements -->
         <h1>Welcome Farmer</h1>
         <h2>Enter Your Coordinates</h2>
+        <!-- Submit event https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event -->
         <form id="coords">
             <!-- A longitude and latitude form on each line -->
             <input type=text id="long1" placeholder="Longitude"><input type=text id="lat1" placeholder="Latitude"><br>
@@ -48,15 +50,17 @@
             <input type="submit" value="Submit"> 
         </form>
     </div>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script -->
     <script>
-        /* Handles form submission */
-        document.getElementById("coords").onsubmit = function(e){
-            e.preventDefault();  /* Avoid refreshing the page */
+        /*https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById*/
+        document.getElementById("coords").onsubmit = function(e){   /* Submit event handler */
+            e.preventDefault();  /* Avoid refreshing the page https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault*/
 
             /* JSON formatting */
             const coords = [
                 {
-                    "longitude": parseFloat(document.getElementById("long1").value),
+                    /*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat*/
+                    "longitude": parseFloat(document.getElementById("long1").value), /*https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value*/
                     "latitude": parseFloat(document.getElementById("lat1").value)
                 },
                 {
@@ -73,6 +77,7 @@
                 },
             ]
             /* Sends a post request to /coordinates endpoint with JSON */
+            /*https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch*/
             fetch("/coordinates", {
                 method: "post",
                 headers: {"Content-Type": "application/json"},
