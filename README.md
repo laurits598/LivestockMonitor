@@ -25,8 +25,13 @@ TTN_Connect_V2/
 └── Utils.h
 
 
-
+# Livestock Monitor Prototype
 ![Fritzing Schematic of the setup](images/total-setup-fritzing.png)
+
+## Pin Connections
+
+
+### RN2483 Module → Arduino Pro Mini
 
 | RN2483 Pin    | Arduino Pin                    | Notes                                |
 | ------------- | ------------------------------ | ------------------------------------ |
@@ -50,71 +55,22 @@ TTN_Connect_V2/
 
 
 
-# Pin Connections
 
-
-
-
-## RN2483 → Arduino Pro Mini
-TX  => D10  
-RX  => D11  
-3V3 => VCC  
-GND => GND  
-RST => D7  
-CTS => (not connected)  
-RTS => (not connected)
-
----
-
-## MPU6050 → Arduino Pro Mini
-VCC => VCC  
-GND => GND  
-SCL => A5  
-SDA => A4  
-INT => (not connected)  
-XDA => (not connected)  
-XCL => (not connected)
-
----
-## Temperature Sensor → Arduino Pro Mini
-# Voltage divider setup
-Left pin   => VCC  
-Right pin  => Resistor(10K)  
-
-Resistor → Arduino Pro Mini
-Left pin   => A0  
-Right pin  => GND 
-
----
-
-## Shared Rails
-Red rail  => VCC  
-Blue rail => GND
-
-
-
-## ESP32 Alert System (Base station)
+# ESP32 Alert System (Base station)
 
 ![Fritzing Schematic of the setup](images/basestation-setup.png)
 
-# Pin Connections
+## Pin Connections
 
-## Buzzer → ESP32
-S  => D23  
-+  => 3V3  
--  => GND  
+### Buzzer & LED → ESP32
 
----
-
-## LED → ESP32
-LED Anode   (+) => D22  
-LED Cathode (–) => Resistor(1k) => GND
-
----
-
-## Shared Rails
-Red rail  => 3V3  
-Blue rail => GND
+| Component | Pin / Connection          | ESP32 Pin / Notes                     |
+|-----------|----------------------------|----------------------------------------|
+| **Buzzer** | S                          | D23 — Signal control                   |
+|           | +                          | 3V3 — Power                            |
+|           | –                          | GND — Ground                           |
+| **LED**    | Anode (+)                  | D22 — LED control pin                  |
+|           | Cathode (–) → Resistor 1k → | GND — Current-limiting resistor needed |
 
 
 
