@@ -52,14 +52,12 @@ TTN_Connect_V2/
 | Resistor (10K) left   | A0          | Analog input reads divider voltage |
 | Resistor (10K) right  | GND         | Divider reference ground |
 
-
-
+---
 
 
 # ESP32 Alert System (Base station)
 
-![Fritzing Schematic of the setup](images/basestation-setup.png)
-
+<img src="images/basestation-setup.png" width="500">
 ## Pin Connections
 
 ### Buzzer & LED → ESP32
