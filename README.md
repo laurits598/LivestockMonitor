@@ -38,7 +38,22 @@ TTN_Connect_V2/
 | **CTS / RTS** | **Not connected**              | Hardware flow control unused         |
 
 
+### Temperature Sensor → Arduino Pro Mini (Voltage Divider)
+
+| Component / Pin       | Arduino Pin | Notes |
+|-----------------------|-------------|-------|
+| Sensor left pin       | VCC         | Sensor supply voltage |
+| Sensor right pin      | → Resistor  | Forms voltage divider |
+| Resistor (10K) left   | A0          | Analog input reads divider voltage |
+| Resistor (10K) right  | GND         | Divider reference ground |
+
+
+
+
 # Pin Connections
+
+
+
 
 ## RN2483 → Arduino Pro Mini
 TX  => D10  
