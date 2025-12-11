@@ -1,29 +1,4 @@
 
-### File tree-structure of the Arduino Project Sketch.
-
-TTN_Connect_V2/
-│
-├── TTN_Connect_V2.ino
-│
-├── Accelerator.cpp
-├── Accelerator.h
-│
-├── Config.h
-│
-├── GPS.cpp
-├── GPS.h
-│
-├── PNP_Management.cpp
-├── PNP_Management.h
-│
-├── RN2483.cpp
-├── RN2483.h
-│
-├── TTN_Config.h
-│
-├── Utils.cpp
-└── Utils.h
-
 
 # Livestock Monitor Prototype
 ![Fritzing Schematic of the setup](images/total-setup-fritzing.png)
@@ -58,6 +33,7 @@ TTN_Connect_V2/
 # ESP32 Alert System (Base station)
 
 <img src="images/basestation-setup.png" width="500">
+
 ## Pin Connections
 
 ### Buzzer & LED → ESP32
@@ -70,6 +46,31 @@ TTN_Connect_V2/
 | **LED**    | Anode (+)                  | D22 — LED control pin                  |
 |           | Cathode (–) → Resistor 1k → | GND — Current-limiting resistor needed |
 
+
+# File tree-structure of the Arduino Project Sketch.
+
+TTN_Connect_V2/
+│
+├── TTN_Connect_V2.ino
+│
+├── Accelerator.cpp
+├── Accelerator.h
+│
+├── Config.h
+│
+├── GPS.cpp
+├── GPS.h
+│
+├── PNP_Management.cpp
+├── PNP_Management.h
+│
+├── RN2483.cpp
+├── RN2483.h
+│
+├── TTN_Config.h
+│
+├── Utils.cpp
+└── Utils.h
 
 
 
